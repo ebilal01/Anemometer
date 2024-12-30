@@ -149,15 +149,6 @@
             Plotly.newPlot('graph', data);
         };
 
-        // Update the graph with new altitude data
-        const updateGraph2 = (timestamps, temperature) => {
-            const data = [{
-                x: timestamps,
-                y: temperature,
-                type: 'scatter'
-            }];
-            Plotly.newPlot('graph', data);
-        };
 
         // Fetch the live data from the /live-data endpoint
         const fetchData = async () => {
@@ -172,9 +163,6 @@
 
                 if (data.timestamps && data.altitudes) {
                     updateGraph(data.timestamps, data.altitudes);
-                }
-                if (data.timestamps && data.altitudes) {
-                    updateGraph2(data.timestamps, data.temperature);
                 }
             } catch (error) {
                 console.error('Error fetching live data:', error);
