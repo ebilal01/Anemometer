@@ -48,7 +48,6 @@ def live_data():
         "longitude": random.uniform(-180.0, 180.0),
         "timestamps": [time.time() - i * 60 for i in range(10)],
         "altitudes": [random.uniform(1000, 20000) for _ in range(10)]
-
     }
 
     # Save flight data to file
@@ -127,3 +126,4 @@ def handle_connect():
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
+
