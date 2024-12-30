@@ -58,7 +58,7 @@ def live_data():
     return jsonify(data)
 
 @app.route("/animation-data", methods=['GET'])
-def live_data():
+def animation_data():
     # Example live telemetry data
     telemetry_data = {
         "rotation": random.uniform(0, 360),  # Rotation in degrees
