@@ -17,6 +17,12 @@
     <div id="map" style="height: 500px; width: 100%;"></div>
     <div id="graph" style="height: 300px; width: 100%; margin-top: 20px;"></div>
     <canvas id="renderCanvas" touch-action="none"></canvas>
+
+    <!-- Label for Latitude and Longitude -->
+    <div id="coordinates" style="margin-top: 10px; font-size: 16px;">
+        Latitude: <span id="lat">0</span>, Longitude: <span id="lon">0</span>
+    </div>
+
     <script>
         const canvas = document.getElementById("renderCanvas");
         const engine = new BABYLON.Engine(canvas, true);
@@ -137,6 +143,10 @@
             flightPath.addLatLng(latLng);
             marker.setLatLng(latLng);
             map.fitBounds(flightPath.getBounds());
+
+            // Update the label with the new coordinates
+            document.getElementById('lat').textContent = latitude.toFixed(6);
+            document.getElementById('lon').textContent = longitude.toFixed(6);
         };
 
         // Update the graph with new altitude data
@@ -202,3 +212,4 @@
     </script>
 </body>
 </html>
+
