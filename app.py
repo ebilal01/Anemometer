@@ -47,8 +47,8 @@ def live_data():
         "latitude": random.uniform(-90.0, 90.0),
         "longitude": random.uniform(-180.0, 180.0),
         "timestamps": [time.time() - i * 60 for i in range(10)],
-        "altitudes": [random.uniform(1000, 20000) for _ in range(10)],
-        "temperature": random.uniform(-10.0, 120.0)
+        "altitudes": [random.uniform(1000, 20000) for _ in range(10)]
+
     }
 
     # Save flight data to file
